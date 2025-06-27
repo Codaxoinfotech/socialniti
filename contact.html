@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SocialNiti</title>
+    <meta name="description" content="Get in touch with SocialNiti - Digital Marketing & Web Development Agency. Contact us for your next project.">
+    <link rel="icon" type="image/png" href="socialNiti.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <img src="socialNiti.png" alt="SocialNiti Logo" class="logo">
+                <span class="brand-name">SocialNiti</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#services" class="nav-link">Services</a>
+                <a href="index.html#packages" class="nav-link">Packages</a>
+                <a href="index.html#reviews" class="nav-link">Reviews</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="contact-hero-content">
+                <h1>Get In Touch</h1>
+                <p>Ready to transform your business? Let's discuss your project and create something amazing together.</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon">⚡</span>
+                        <span class="stat-text">24h Response</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">💬</span>
+                        <span class="stat-text">Free Consultation</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">🎯</span>
+                        <span class="stat-text">Custom Solutions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <div class="form-header">
+                        <h2>Send us a Message</h2>
+                        <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+                    </div>
+
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Service Interested In *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service</option>
+                                <option value="google-ads">Google Ads Management</option>
+                                <option value="meta-ads">Meta Ads Management</option>
+                                <option value="seo">Search Engine Optimization</option>
+                                <option value="social-media">Social Media Marketing</option>
+                                <option value="web-development">Web Development</option>
+                                <option value="personal-branding">Personal Branding</option>
+                                <option value="content-marketing">Content Marketing</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget">Project Budget</label>
+                            <select id="budget" name="budget">
+                                <option value="">Select budget range</option>
+                                <option value="under-25k">Under ₹25,000</option>
+                                <option value="25k-50k">₹25,000 - ₹50,000</option>
+                                <option value="50k-100k">₹50,000 - ₹1,00,000</option>
+                                <option value="100k-250k">₹1,00,000 - ₹2,50,000</option>
+                                <option value="250k-500k">₹2,50,000 - ₹5,00,000</option>
+                                <option value="above-500k">Above ₹5,00,000</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Project Details *</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your project, goals, and requirements..." required></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span class="checkmark"></span>
+                                Subscribe to our newsletter for digital marketing tips and updates
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-enhanced">
+                            <span class="btn-icon">🚀</span>
+                            <span class="btn-text">Send Message</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info-wrapper">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <p>Ready to start your project? Reach out to us through any of these channels.</p>
+
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="method-icon">📧</div>
+                                <div class="method-content">
+                                    <h4>Email</h4>
+                                    <a href="mailto:socialnitiofficial@gmail.com">socialnitiofficial@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-method">
+                                <div class="method-icon">📱</div>
+                                <div class="method-content">
+                                    <h4>Phone</h4>
+                                    <a href="tel:+917724809716">+91-7724809716</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-method">
+                                <div class="method-icon">📍</div>
+                                <div class="method-content">
+                                    <h4>Location</h4>
+                                    <p>Raipur, Chhattisgarh, India</p>
+                                </div>
+                            </div>
+
+                            <div class="contact-method">
+                                <div class="method-icon">⏰</div>
+                                <div class="method-content">
+                                    <h4>Business Hours</h4>
+                                    <p>Mon - Sat: 9:00 AM - 7:00 PM<br>Sunday: By Appointment</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-connect">
+                            <h4>Follow Us</h4>
+                            <div class="social-links">
+                                <a href="#" class="social-link">
+                                    <span class="social-icon">📘</span>
+                                    <span class="social-text">Facebook</span>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <span class="social-icon">📷</span>
+                                    <span class="social-text">Instagram</span>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <span class="social-icon">💼</span>
+                                    <span class="social-text">LinkedIn</span>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <span class="social-icon">🐦</span>
+                                    <span class="social-text">Twitter</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced FAQ Section -->
+    <section class="faq-section-enhanced">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <span class="badge-icon">❓</span>
+                    <span class="badge-text">Got Questions?</span>
+                </div>
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about our digital marketing services, process, and partnership.</p>
+            </div>
+
+            <!-- FAQ Categories -->
+            <div class="faq-categories">
+                <button class="faq-category-btn active" data-category="all">
+                    <span class="category-icon">🌟</span>
+                    <span class="category-text">All Questions</span>
+                </button>
+                <button class="faq-category-btn" data-category="services">
+                    <span class="category-icon">🚀</span>
+                    <span class="category-text">Services</span>
+                </button>
+                <button class="faq-category-btn" data-category="pricing">
+                    <span class="category-icon">💰</span>
+                    <span class="category-text">Pricing</span>
+                </button>
+                <button class="faq-category-btn" data-category="process">
+                    <span class="category-icon">⚙️</span>
+                    <span class="category-text">Process</span>
+                </button>
+                <button class="faq-category-btn" data-category="support">
+                    <span class="category-icon">🤝</span>
+                    <span class="category-text">Support</span>
+                </button>
+            </div>
+
+            <div class="faq-grid-enhanced">
+                <!-- Services Category -->
+                <div class="faq-item-enhanced" data-category="services">
+                    <div class="faq-question-enhanced">
+                        <div class="question-content">
+                            <span class="question-icon">🎯</span>
+                            <h4>What digital marketing services do you offer?</h4>
+                        </div>
+                        <span class="faq-toggle-enhanced">+</span>
+                    </div>
+                    <div class="faq-answer-enhanced">
+                        <p>We offer a comprehensive range of digital marketing services including:</p>
+                        <ul>
+                            <li><strong>Google Ads Management:</strong> Search, Display, Shopping, and YouTube campaigns</li>
+                            <li><strong>Meta Ads Management:</strong> Facebook and Instagram advertising</li>
+                            <li><strong>SEO:</strong> On-page, off-page, and technical optimization</li>
+                            <li><strong>Social Media Marketing:</strong> Content creation and community management</li>
+                            <li><strong>Web Development:</strong> Responsive websites and e-commerce solutions</li>
+                            <li><strong>Personal Branding:</strong> Building your professional online presence</li>
+                            <li><strong>Content Marketing:</strong> Blog writing, video content, and copywriting</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item-enhanced" data-category="services">
+                    <div class="faq-question-enhanced">
+                        <div class="question-content">
+                            <span class="question-icon">⏱️</span>
+                            <h4>How long does it take to see results?</h4>
+                        </div>
+                        <span class="faq-toggle-enhanced">+</span>
+                    </div>
+                    <div class="faq-answer-enhanced">
+                        <p>Results timeline varies by service type:</p>
+                        <div class="timeline-grid">
+                            <div class="timeline-item">
+                                <strong>Google Ads:</strong> 1-2 weeks for initial data, 4-6 weeks for optimization
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Meta Ads:</strong> 1-3 weeks for initial results, 6-8 weeks for full optimization
+                            </div>
+                            <div class="timeline-item">
+                                <strong>SEO:</strong> 3-6 months for significant ranking improvements
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Social Media:</strong> 2-4 weeks for engagement growth
+                            </div>
+                            <div class="timeline-item">
+                                <strong>Web Development:</strong> 2-8 weeks depending on complexity
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item-enhanced" data-category="services">
+                    <div class="faq-question-enhanced">
+                        <div class="question-content">
+                            <span class="question-icon">🏢</span>
+                            <h4>Do you work with small businesses and startups?</h4>
+                        </div>
+                        <span class="faq-toggle-enhanced">+</span>
+                    </div>
+                    <div class="faq-answer-enhanced">
+                        <p>Absolutely! We're passionate about helping businesses of all sizes succeed. We offer:</p>
+                        <ul>
+                            <li><strong>Startup Packages:</strong> Budget-friendly solutions for new businesses</li>
+                            <li><strong>Small Business Focus:</strong> Tailored strategies for local and regional growth</li>
+                            <li><strong>Scalable Solutions:</strong> Services that grow with your business</li>
+                            <li><strong>Flexible Budgets:</strong> Options starting from ₹15,000/month</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pricing Category -->
+                <div class="faq-item-enhanced" data-category="pricing">
+                    <div class="faq-question-enhanced">
+                        <div class="question-content">
+                            <span class="question-icon">💳</span>
+                            <h4>What are your pricing models?</h4>
+                        </div>
+                        <span class="faq-toggle-enhanced">+</span>
+                    </div>
+                    <div class="faq-answer-enhanced">
+                        <p>We offer flexible pricing models to suit different business needs:</p>
+                        <div class="pricing-models">
+                            <div class="pricing-model">
+                                <strong>Monthly Retainer:</strong> Fixed monthly fee for ongoing services
+                            </div>
+                            <div class="pricing-model">
+                                <strong>Project-Based:</strong> One-time fee for specific projects
+                            </div>
+                            <div class="pricing-model">
+                                <strong>Performance-Based:</strong> Results-driven pricing with success metrics
+                            </div>
+                            <div class="pricing-model">
+                                <strong>Custom Packages:</strong> Tailored solutions for unique requirements
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item-enhanced" data-category="pricing">
+                    <div class="faq-question-enhanced">
+                        <div class="question-content">
+                            <span class="question-icon">📊</span>
+                            <h4>What's included in your packages?</h4>
+                        </div>
+                        <span class="faq-toggle-enhanced">+</span>
+                    </div>
+                    <div class="faq-answer-enhanced">
+                        <p>Our comprehensive packages typically include:</p>
+                        <div class="package-inclusions">
+                            <div class="inclusion-category">
+                                <h5>Strategy & Planning</h5>
+                                <ul>
+                                    <li>Initial audit and analysis</li>
+                                    <li>Custom strategy development</li>
+                                    <li>Competitor research</li>
+                                    <li>Goal setting and KPI definition</li>
+                                </ul>
+                            </div>
+                            <div class="inclusion-category">
+                                <h5>Implementation</h5>
+                                <ul>
+                                    <li>Campaign setup and launch</li>
+                                    <li>Content creation</li>
+                                    <li>Ad design and copywriting</li>
+                                    <li>Technical implementation</li>
+                                </ul>
+                            </div>
+                            <div class="inclusion-category">
+                                <h5>Ongoing Management</h5>
+                                <ul>
+                                    <li>Daily monitoring and optimization</li>
+                                    <li>A/B testing and improvements</li>
+                                    <li>Performance tracking</li>
+                                    <li>Monthly reporting</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item-enhanced" data-category="pricing">
+                    <div class="faq-question-enhanced">
+                        <div class="question-content">
+                            <span class="question-icon">🔄</span>
+                            <h4>Can I cancel my service anytime?</h4>
+                        </div>
+                        <span class="faq-toggle-enhanced">+</span>
+                    </div>
+                    <div class="faq-answer-enhanced">
+                        <p>Yes, we believe in earning your business through results, not contracts:</p>
+                        <ul>
+                            <li><strong>30-Day Notice:</strong> Cancel with 30 days written notice</li>
+                            <li><strong>No Long-Term Contracts:</strong> Month-to-month service agreements</li>
+                            <li><strong>Data Ownership:</strong> You keep all your data and assets</li>
+                            <li><strong>Smooth Transition:</strong> We'll help transfer everything to you or your new agency</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Process Category -->
+                <div class="faq-item-enhanced" data-category="process">
+                    <div class="faq-question-enhanced">
+                        <div class="question-content">
+                            <span class="question-icon">🛣️</span>
+                            <h4>What's your onboarding process?</h4>
+                        </div>
+                        <span class="faq-toggle-enhanced">+</span>
+                    </div>
+                    <div class="faq-answer-enhanced">
+                        <p>Our streamlined onboarding process ensures a smooth start:</p>
+                        <div class="process-steps">
+                            <div class="process-step">
+                                <span class="step-number">1</span>
+                                <div class="step-content">
+                                    <strong>Discovery Call:</strong> Understanding your business, goals, and challenges
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <span class="step-number">2</span>
+                                <div class="step-content">
+                                    <strong>Strategy Development:</strong> Creating a custom plan for your success
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <span class="step-number">3</span>
+                                <div class="step-content">
+                                    <strong>Account Setup:</strong> Setting up all necessary tools and platforms
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <span class="step-number">4</span>
+                                <div class="step-content">
+                                    <strong>Launch & Monitor:</strong> Going live and tracking initial performance
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item-enhanced" data-category="process">
+                    <div class="faq-question-enhanced">
+                        <div class="question-content">
+                            <span class="question-icon">📈</span>
+                            <h4>How do you measure and report success?</h4>
+                        </div>
+                        <span class="faq-toggle-enhanced">+</span>
+                    </div>
+                    <div class="faq-answer-enhanced">
+                        <p>We use comprehensive tracking and transparent reporting:</p>
+                        <div class="reporting-features">
+                            <div class="feature-item">
+                                <strong>📊 Custom Dashboards:</strong> Real-time performance tracking
+                            </div>
+                            <div class="feature-item">
+                                <strong>📅 Monthly Reports:</strong> Detailed analysis and insights
+                            </div>
+                            <div class="feature-item">
+                                <strong>🎯 KPI Tracking:</strong> Focus on metrics that matter to your business
+                            </div>
+                            <div class="feature-item">
+                                <strong>💬 Regular Check-ins:</strong> Weekly/bi-weekly strategy calls
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Support Category -->
+                <div class="faq-item-enhanced" data-category="support">
+                    <div class="faq-question-enhanced">
+                        <div class="question-content">
+                            <span class="question-icon">🤝</span>
+                            <h4>What kind of ongoing support do you provide?</h4>
+                        </div>
+                        <span class="faq-toggle-enhanced">+</span>
+                    </div>
+                    <div class="faq-answer-enhanced">
+                        <p>We provide comprehensive ongoing support to ensure your success:</p>
+                        <ul>
+                            <li><strong>Dedicated Account Manager:</strong> Your single point of contact</li>
+                            <li><strong>24/7 Monitoring:</strong> Continuous campaign oversight</li>
+                            <li><strong>Regular Optimization:</strong> Ongoing improvements and testing</li>
+                            <li><strong>Strategy Consultations:</strong> Monthly strategy review calls</li>
+                            <li><strong>Emergency Support:</strong> Quick response for urgent issues</li>
+                            <li><strong>Training & Education:</strong> Helping your team understand the process</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="faq-item-enhanced" data-category="support">
+                    <div class="faq-question-enhanced">
+                        <div class="question-content">
+                            <span class="question-icon">⚡</span>
+                            <h4>How quickly do you respond to questions?</h4>
+                        </div>
+                        <span class="faq-toggle-enhanced">+</span>
+                    </div>
+                    <div class="faq-answer-enhanced">
+                        <p>We pride ourselves on quick response times:</p>
+                        <div class="response-times">
+                            <div class="response-item urgent">
+                                <span class="response-icon">🚨</span>
+                                <strong>Urgent Issues:</strong> Within 2 hours
+                            </div>
+                            <div class="response-item normal">
+                                <span class="response-icon">📧</span>
+                                <strong>General Questions:</strong> Within 24 hours
+                            </div>
+                            <div class="response-item scheduled">
+                                <span class="response-icon">📅</span>
+                                <strong>Strategy Discussions:</strong> Scheduled weekly calls
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item-enhanced" data-category="all">
+                    <div class="faq-question-enhanced">
+                        <div class="question-content">
+                            <span class="question-icon">🎨</span>
+                            <h4>Do you offer custom solutions beyond standard packages?</h4>
+                        </div>
+                        <span class="faq-toggle-enhanced">+</span>
+                    </div>
+                    <div class="faq-answer-enhanced">
+                        <p>Absolutely! We understand every business is unique:</p>
+                        <ul>
+                            <li><strong>Custom Strategy Development:</strong> Tailored to your specific industry and goals</li>
+                            <li><strong>Hybrid Service Packages:</strong> Mix and match services as needed</li>
+                            <li><strong>Enterprise Solutions:</strong> Large-scale implementations for bigger organizations</li>
+                            <li><strong>Specialized Industries:</strong> Experience with healthcare, e-commerce, SaaS, and more</li>
+                            <li><strong>Integration Services:</strong> Connecting with your existing tools and systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ CTA -->
+            <div class="faq-cta">
+                <div class="faq-cta-content">
+                    <h3>Still have questions?</h3>
+                    <p>Can't find the answer you're looking for? Our team is here to help you succeed.</p>
+                    <div class="faq-cta-buttons">
+                        <a href="#contact-form" class="btn btn-primary btn-enhanced">
+                            <span class="btn-icon">💬</span>
+                            <span class="btn-text">Ask a Question</span>
+                        </a>
+                        <a href="tel:+917724809716" class="btn btn-secondary btn-enhanced">
+                            <span class="btn-icon">📞</span>
+                            <span class="btn-text">Call Us Now</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Enhanced Footer -->
+    <footer class="footer footer-enhanced">
+        <!-- Footer Background Elements -->
+        <div class="footer-bg-elements">
+            <div class="footer-bg-shape shape-wave"></div>
+            <div class="footer-bg-shape shape-dots"></div>
+            <div class="footer-bg-shape shape-gradient"></div>
+        </div>
+
+        <div class="container">
+            <!-- Footer Main Content -->
+            <div class="footer-main">
+                <!-- Enhanced Footer Brand -->
+                <div class="footer-brand-enhanced slide-in-left" style="animation-delay: 0.2s;">
+                    <div class="brand-logo-wrapper">
+                        <img src="socialNiti.png" alt="SocialNiti Logo" class="footer-logo-enhanced">
+                        <div class="brand-content">
+                            <h3 class="brand-name">SocialNiti</h3>
+                            <p class="brand-tagline">Digital Marketing & Web Development Agency</p>
+                        </div>
+                    </div>
+
+                    <div class="brand-description">
+                        <p>Transforming businesses through innovative digital strategies, creative design, and data-driven results. Your success is our mission.</p>
+                    </div>
+
+                    <!-- Enhanced Social Links -->
+                    <div class="footer-social-enhanced">
+                        <h4 class="social-title">Follow Us</h4>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/socialnitiofficial/" target="_blank" class="social-link instagram hover-glow">
+                                <span class="social-icon">📷</span>
+                                <span class="social-text">Instagram</span>
+                            </a>
+                            <a href="#" target="_blank" class="social-link facebook hover-glow">
+                                <span class="social-icon">📱</span>
+                                <span class="social-text">Facebook</span>
+                            </a>
+                            <a href="#" target="_blank" class="social-link linkedin hover-glow">
+                                <span class="social-icon">💼</span>
+                                <span class="social-text">LinkedIn</span>
+                            </a>
+                            <a href="#" target="_blank" class="social-link twitter hover-glow">
+                                <span class="social-icon">🐦</span>
+                                <span class="social-text">Twitter</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enhanced Footer Links -->
+                <div class="footer-links-enhanced">
+                    <!-- Services Column -->
+                    <div class="footer-column-enhanced slide-in-left" style="animation-delay: 0.4s;">
+                        <div class="column-header">
+                            <span class="column-icon">🚀</span>
+                            <h4 class="column-title">Our Services</h4>
+                        </div>
+                        <div class="column-links">
+                            <a href="services.html" class="footer-link hover-slide">
+                                <span class="link-icon">🎯</span>
+                                <span class="link-text">Google & Meta Ads</span>
+                            </a>
+                            <a href="services.html" class="footer-link hover-slide">
+                                <span class="link-icon">🔍</span>
+                                <span class="link-text">SEO Optimization</span>
+                            </a>
+                            <a href="services.html" class="footer-link hover-slide">
+                                <span class="link-icon">📱</span>
+                                <span class="link-text">Social Media Marketing</span>
+                            </a>
+                            <a href="services.html" class="footer-link hover-slide">
+                                <span class="link-icon">💻</span>
+                                <span class="link-text">Web Development</span>
+                            </a>
+                            <a href="services.html" class="footer-link hover-slide">
+                                <span class="link-icon">👤</span>
+                                <span class="link-text">Personal Branding</span>
+                            </a>
+                            <a href="services.html" class="footer-link hover-slide">
+                                <span class="link-icon">📝</span>
+                                <span class="link-text">Content Marketing</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Company Column -->
+                    <div class="footer-column-enhanced slide-in-left" style="animation-delay: 0.6s;">
+                        <div class="column-header">
+                            <span class="column-icon">🏢</span>
+                            <h4 class="column-title">Company</h4>
+                        </div>
+                        <div class="column-links">
+                            <a href="#about" class="footer-link hover-slide">
+                                <span class="link-icon">💡</span>
+                                <span class="link-text">About Us</span>
+                            </a>
+                            <a href="#services" class="footer-link hover-slide">
+                                <span class="link-icon">✨</span>
+                                <span class="link-text">Our Services</span>
+                            </a>
+                            <a href="#packages" class="footer-link hover-slide">
+                                <span class="link-icon">💰</span>
+                                <span class="link-text">Packages</span>
+                            </a>
+                            <a href="#reviews" class="footer-link hover-slide">
+                                <span class="link-icon">⭐</span>
+                                <span class="link-text">Client Reviews</span>
+                            </a>
+                            <a href="contact.html" class="footer-link hover-slide">
+                                <span class="link-icon">📞</span>
+                                <span class="link-text">Contact Us</span>
+                            </a>
+                            <a href="#" class="footer-link hover-slide">
+                                <span class="link-icon">📈</span>
+                                <span class="link-text">Case Studies</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact & Support Column -->
+                    <div class="footer-column-enhanced slide-in-left" style="animation-delay: 0.8s;">
+                        <div class="column-header">
+                            <span class="column-icon">📞</span>
+                            <h4 class="column-title">Get In Touch</h4>
+                        </div>
+
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <span class="contact-icon">📧</span>
+                                <div class="contact-details">
+                                    <span class="contact-label">Email</span>
+                                    <a href="mailto:socialnitiofficial@gmail.com" class="contact-value" style="color:white;">socialnitiofficial@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <span class="contact-icon">📞</span>
+                                <div class="contact-details">
+                                    <span class="contact-label">Phone</span>
+                                    <a href="tel:+917724809716" class="contact-value" style="color:white;">+91-7724809716</a>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <span class="contact-icon">📍</span>
+                                <div class="contact-details">
+                                    <span class="contact-label">Location</span>
+                                    <span class="contact-value" >Raipur, Chhattisgarh, India</span>
+                                </div>
+                            </div>
+
+                            <div class="contact-item">
+                                <span class="contact-icon">🕒</span>
+                                <div class="contact-details">
+                                    <span class="contact-label">Business Hours</span>
+                                    <span class="contact-value">Mon - Sat: 9:00 AM - 7:00 PM</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Contact CTA -->
+                        <div class="footer-cta">
+                            <a href="contact.html" class="footer-cta-btn hover-glow">
+                                <span class="cta-icon">🚀</span>
+                                <span class="cta-text">Start Your Project</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Enhanced Footer Bottom -->
+            <div class="footer-bottom-enhanced">
+                <div class="footer-bottom-content">
+                    <div class="copyright-text">
+                        <span class="copyright-symbol">©</span>
+                        <span class="copyright-year">2025</span>
+                        <span class="copyright-brand">SocialNiti</span>
+                        <span class="copyright-rights">All rights reserved.</span>
+                    </div>
+                    <div class="legal-links">
+                         <a href="terms.html" class="legal-link">Terms of Service</a>
+                            <span class="legal-separator">•</span>
+                            <a href="privacy.html" class="legal-link">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -22,43 +22,56 @@ function initializeWebsite() {
     initFormValidation();
     initTooltips();
     initLazyLoading();
-    
+
     // Initialize enhanced features
     initHeroAnimations();
     initServiceCardEffects();
     initPackageCardEffects();
     initReviewCardEffects();
     initFooterAnimations();
-    
+
+    // Initialize contact page features
+    initContactForm();
+    initFAQ();
+
     console.log('SocialNiti website initialized successfully!');
 }
 
 // ===== MOBILE MENU =====
 function initMobileMenu() {
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-    const navLinksItems = document.querySelectorAll('.nav-links a');
-    
-    if (mobileMenuBtn && navLinks) {
+    const mobileMenuBtn = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    if (mobileMenuBtn && navMenu) {
         mobileMenuBtn.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
+            navMenu.classList.toggle('active');
             mobileMenuBtn.classList.toggle('active');
             document.body.classList.toggle('menu-open');
         });
-        
+
         // Close menu when clicking on nav links
-        navLinksItems.forEach(link => {
+        navLinks.forEach(link => {
             link.addEventListener('click', function() {
-                navLinks.classList.remove('active');
+                navMenu.classList.remove('active');
                 mobileMenuBtn.classList.remove('active');
                 document.body.classList.remove('menu-open');
             });
         });
-        
+
         // Close menu when clicking outside
         document.addEventListener('click', function(e) {
-            if (!e.target.closest('.nav-links') && !e.target.closest('.mobile-menu-btn')) {
-                navLinks.classList.remove('active');
+            if (!e.target.closest('.nav-menu') && !e.target.closest('.nav-toggle')) {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
                 mobileMenuBtn.classList.remove('active');
                 document.body.classList.remove('menu-open');
             }
@@ -69,18 +82,18 @@ function initMobileMenu() {
 // ===== SMOOTH SCROLLING =====
 function initSmoothScrolling() {
     const links = document.querySelectorAll('a[href^="#"]');
-    
+
     links.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
-            
+
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
-            
+
             if (targetElement) {
                 const headerHeight = document.querySelector('.header')?.offsetHeight || 80;
                 const targetPosition = targetElement.offsetTop - headerHeight;
-                
+
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
@@ -93,13 +106,13 @@ function initSmoothScrolling() {
 // ===== SCROLL ANIMATIONS =====
 function initScrollAnimations() {
     const animatedElements = document.querySelectorAll('.slide-in-left, .slide-in-right, .fade-in, .scale-in');
-    
+
     if ('IntersectionObserver' in window) {
         animationObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animate');
-                    
+
                     // Add staggered animation for multiple elements
                     const delay = entry.target.style.animationDelay || '0s';
                     entry.target.style.animationDelay = delay;
@@ -109,7 +122,7 @@ function initScrollAnimations() {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         });
-        
+
         animatedElements.forEach(element => {
             animationObserver.observe(element);
         });
@@ -119,7 +132,7 @@ function initScrollAnimations() {
 // ===== COUNTER ANIMATIONS =====
 function initCounterAnimations() {
     const counters = document.querySelectorAll('.counter');
-    
+
     if ('IntersectionObserver' in window) {
         counterObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -129,7 +142,7 @@ function initCounterAnimations() {
                     const duration = 2000; // 2 seconds
                     const increment = target / (duration / 16); // 60fps
                     let current = 0;
-                    
+
                     const updateCounter = () => {
                         current += increment;
                         if (current < target) {
@@ -139,7 +152,7 @@ function initCounterAnimations() {
                             counter.textContent = target;
                         }
                     };
-                    
+
                     updateCounter();
                     counterObserver.unobserve(counter);
                 }
@@ -147,7 +160,7 @@ function initCounterAnimations() {
         }, {
             threshold: 0.5
         });
-        
+
         counters.forEach(counter => {
             counterObserver.observe(counter);
         });
@@ -157,25 +170,25 @@ function initCounterAnimations() {
 // ===== PROGRESS BARS =====
 function initProgressBars() {
     const progressBars = document.querySelectorAll('.progress-bar, .progress-line');
-    
+
     if ('IntersectionObserver' in window) {
         const progressObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const progressBar = entry.target;
                     const progress = progressBar.getAttribute('data-progress');
-                    
+
                     setTimeout(() => {
                         progressBar.style.width = progress + '%';
                     }, 500);
-                    
+
                     progressObserver.unobserve(progressBar);
                 }
             });
         }, {
             threshold: 0.5
         });
-        
+
         progressBars.forEach(bar => {
             progressObserver.observe(bar);
         });
@@ -185,17 +198,17 @@ function initProgressBars() {
 // ===== PARALLAX EFFECTS =====
 function initParallaxEffects() {
     const parallaxElements = document.querySelectorAll('.parallax-bg, .hero-bg-elements, .services-bg-elements, .reviews-bg-elements, .footer-bg-elements');
-    
+
     window.addEventListener('scroll', () => {
         if (!isScrolling) {
             requestAnimationFrame(() => {
                 const scrolled = window.pageYOffset;
                 const rate = scrolled * -0.5;
-                
+
                 parallaxElements.forEach(element => {
                     element.style.transform = `translateY(${rate}px)`;
                 });
-                
+
                 isScrolling = false;
             });
             isScrolling = true;
@@ -206,37 +219,37 @@ function initParallaxEffects() {
 // ===== FORM VALIDATION =====
 function initFormValidation() {
     const forms = document.querySelectorAll('form');
-    
+
     forms.forEach(form => {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             const formData = new FormData(form);
             const formFields = form.querySelectorAll('input, textarea, select');
             let isValid = true;
-            
+
             // Clear previous errors
             form.querySelectorAll('.error-message').forEach(error => error.remove());
             formFields.forEach(field => field.classList.remove('error'));
-            
+
             // Validate each field
             formFields.forEach(field => {
                 if (field.hasAttribute('required') && !field.value.trim()) {
                     showFieldError(field, 'This field is required');
                     isValid = false;
                 }
-                
+
                 if (field.type === 'email' && field.value && !isValidEmail(field.value)) {
                     showFieldError(field, 'Please enter a valid email address');
                     isValid = false;
                 }
-                
+
                 if (field.type === 'tel' && field.value && !isValidPhone(field.value)) {
                     showFieldError(field, 'Please enter a valid phone number');
                     isValid = false;
                 }
             });
-            
+
             if (isValid) {
                 // Show success message
                 showSuccessMessage(form, 'Thank you! Your message has been sent successfully.');
@@ -260,7 +273,7 @@ function showSuccessMessage(form, message) {
     successDiv.className = 'success-message';
     successDiv.textContent = message;
     form.appendChild(successDiv);
-    
+
     setTimeout(() => {
         successDiv.remove();
     }, 5000);
@@ -279,7 +292,7 @@ function isValidPhone(phone) {
 // ===== TOOLTIPS =====
 function initTooltips() {
     const tooltipElements = document.querySelectorAll('[data-tooltip]');
-    
+
     tooltipElements.forEach(element => {
         element.addEventListener('mouseenter', function() {
             const tooltipText = this.getAttribute('data-tooltip');
@@ -287,14 +300,14 @@ function initTooltips() {
             tooltip.className = 'tooltip';
             tooltip.textContent = tooltipText;
             document.body.appendChild(tooltip);
-            
+
             const rect = this.getBoundingClientRect();
             tooltip.style.left = rect.left + (rect.width / 2) - (tooltip.offsetWidth / 2) + 'px';
             tooltip.style.top = rect.top - tooltip.offsetHeight - 10 + 'px';
-            
+
             this.tooltipElement = tooltip;
         });
-        
+
         element.addEventListener('mouseleave', function() {
             if (this.tooltipElement) {
                 this.tooltipElement.remove();
@@ -307,7 +320,7 @@ function initTooltips() {
 // ===== LAZY LOADING =====
 function initLazyLoading() {
     const lazyImages = document.querySelectorAll('img[data-src]');
-    
+
     if ('IntersectionObserver' in window) {
         const imageObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -319,7 +332,7 @@ function initLazyLoading() {
                 }
             });
         });
-        
+
         lazyImages.forEach(img => {
             imageObserver.observe(img);
         });
@@ -329,12 +342,12 @@ function initLazyLoading() {
 // ===== HERO ANIMATIONS =====
 function initHeroAnimations() {
     const heroElements = document.querySelectorAll('.hero-card, .hero-stats, .hero-cta');
-    
+
     // Staggered animation for hero elements
     heroElements.forEach((element, index) => {
         element.style.animationDelay = `${index * 0.2}s`;
     });
-    
+
     // Floating animation for hero background elements
     const heroShapes = document.querySelectorAll('.hero-bg-shape');
     heroShapes.forEach((shape, index) => {
@@ -345,16 +358,16 @@ function initHeroAnimations() {
 // ===== SERVICE CARD EFFECTS =====
 function initServiceCardEffects() {
     const serviceCards = document.querySelectorAll('.service-card-enhanced, .service-card');
-    
+
     serviceCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-8px) scale(1.02)';
         });
-        
+
         card.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0) scale(1)';
         });
-        
+
         // Add click effect
         card.addEventListener('click', function() {
             this.style.transform = 'translateY(-4px) scale(0.98)';
@@ -368,13 +381,13 @@ function initServiceCardEffects() {
 // ===== PACKAGE CARD EFFECTS =====
 function initPackageCardEffects() {
     const packageCards = document.querySelectorAll('.package-card-enhanced, .package-card');
-    
+
     packageCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
             // Add glow effect
             this.style.boxShadow = '0 20px 40px rgba(255, 107, 53, 0.2)';
         });
-        
+
         card.addEventListener('mouseleave', function() {
             this.style.boxShadow = '0 10px 30px rgba(255, 107, 53, 0.1)';
         });
@@ -384,13 +397,13 @@ function initPackageCardEffects() {
 // ===== REVIEW CARD EFFECTS =====
 function initReviewCardEffects() {
     const reviewCards = document.querySelectorAll('.review-card-enhanced, .review-card');
-    
+
     reviewCards.forEach(card => {
         card.addEventListener('mouseenter', function() {
             // Add subtle rotation
             this.style.transform = 'translateY(-8px) rotateY(2deg)';
         });
-        
+
         card.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0) rotateY(0deg)';
         });
@@ -400,19 +413,19 @@ function initReviewCardEffects() {
 // ===== FOOTER ANIMATIONS =====
 function initFooterAnimations() {
     const footerElements = document.querySelectorAll('.footer-brand-enhanced, .footer-column-enhanced, .footer-stats');
-    
+
     // Staggered animation for footer elements
     footerElements.forEach((element, index) => {
         element.style.animationDelay = `${index * 0.3}s`;
     });
-    
+
     // Social links hover effects
     const socialLinks = document.querySelectorAll('.social-link');
     socialLinks.forEach(link => {
         link.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-3px) scale(1.05)';
         });
-        
+
         link.addEventListener('mouseleave', function() {
             this.style.transform = 'translateY(0) scale(1)';
         });
@@ -426,7 +439,7 @@ function initScrollToTop() {
     scrollToTopBtn.innerHTML = '↑';
     scrollToTopBtn.setAttribute('aria-label', 'Scroll to top');
     document.body.appendChild(scrollToTopBtn);
-    
+
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 300) {
             scrollToTopBtn.classList.add('visible');
@@ -434,7 +447,7 @@ function initScrollToTop() {
             scrollToTopBtn.classList.remove('visible');
         }
     });
-    
+
     scrollToTopBtn.addEventListener('click', () => {
         window.scrollTo({
             top: 0,
@@ -511,6 +524,126 @@ window.addEventListener('beforeunload', function() {
 document.addEventListener('DOMContentLoaded', function() {
     initScrollToTop();
 });
+
+// ===== CONTACT FORM =====
+function initContactForm() {
+    const contactForm = document.getElementById('contactForm');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+
+            // Basic validation
+            if (!data.firstName || !data.lastName || !data.email || !data.service || !data.message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            // Simulate form submission
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+
+            submitBtn.innerHTML = '<span class="btn-icon">⏳</span><span class="btn-text">Sending...</span>';
+            submitBtn.disabled = true;
+
+            // Simulate API call
+            setTimeout(() => {
+                alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+                contactForm.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+    }
+}
+
+// ===== ENHANCED FAQ FUNCTIONALITY =====
+function initFAQ() {
+    // Handle both old and new FAQ structures
+    const faqItems = document.querySelectorAll('.faq-item, .faq-item-enhanced');
+    const categoryBtns = document.querySelectorAll('.faq-category-btn');
+
+    // FAQ Item Click Handlers
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question, .faq-question-enhanced');
+
+        if (question) {
+            question.addEventListener('click', function() {
+                // Close other open items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        }
+    });
+
+    // Category Filter Functionality
+    if (categoryBtns.length > 0) {
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const category = this.getAttribute('data-category');
+
+                // Update active button
+                categoryBtns.forEach(otherBtn => {
+                    otherBtn.classList.remove('active');
+                });
+                this.classList.add('active');
+
+                // Filter FAQ items
+                const enhancedFaqItems = document.querySelectorAll('.faq-item-enhanced');
+                enhancedFaqItems.forEach(item => {
+                    const itemCategory = item.getAttribute('data-category');
+
+                    if (category === 'all' || itemCategory === category) {
+                        item.style.display = 'block';
+                        // Add fade-in animation
+                        item.style.opacity = '0';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                        }, 100);
+                    } else {
+                        item.style.display = 'none';
+                        // Close if open
+                        item.classList.remove('active');
+                    }
+                });
+            });
+        });
+    }
+
+    // Smooth scroll to FAQ section when CTA is clicked
+    const faqCTABtns = document.querySelectorAll('a[href="#contact-form"]');
+    faqCTABtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.scrollIntoView({ behavior: 'smooth' });
+                // Focus on first input
+                setTimeout(() => {
+                    const firstInput = contactForm.querySelector('input');
+                    if (firstInput) firstInput.focus();
+                }, 500);
+            }
+        });
+    });
+}
 
 // ===== CONSOLE BRANDING =====
 console.log('%c🚀 SocialNiti Website', 'color: #FF6B35; font-size: 20px; font-weight: bold;');
