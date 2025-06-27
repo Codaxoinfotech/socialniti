@@ -3678,14 +3678,28 @@ p {
 
     .review-author-info {
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
     }
 
     .author-name {
         font-size: var(--font-size-base);
+        text-align: center;
+        margin: 0 auto;
     }
 
     .author-title {
         font-size: var(--font-size-sm);
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .review-stars {
+        text-align: center;
+        margin: 0 auto;
     }
 
     .review-quote-icon {
@@ -3810,15 +3824,30 @@ p {
         font-size: var(--font-size-lg);
     }
 
+    .review-author-info {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
     .author-name {
         font-size: var(--font-size-sm);
+        text-align: center;
+        margin: 0 auto;
     }
 
     .author-title {
         font-size: var(--font-size-xs);
+        text-align: center;
+        margin: 0 auto;
     }
 
     .review-stars {
+        text-align: center;
+        margin: 0 auto;
         font-size: var(--font-size-base);
     }
 
@@ -4096,6 +4125,7 @@ p {
 }
 
 .social-text {
+    color:white;
     font-weight: 500;
 }
 
@@ -6679,7 +6709,7 @@ img.lazy.loaded {
 }
 
 .social-link:hover {
-    color: var(--primary-color);
+    color: white;
 }
 
 .quick-actions {
